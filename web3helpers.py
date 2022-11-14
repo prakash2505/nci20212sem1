@@ -112,14 +112,14 @@ def ethTransfer():
         print('tx mined')
 
 
-#  run some tests
+# #  run some tests
 
-print("symbol is: " + symbol())
+# print("symbol is: " + symbol())
 
-print("decimal places are: " + str(decimals()))
+# print("decimal places are: " + str(decimals()))
 
-print("balance of owner account " + ownerAddress + " is " + str(balanceOf(ownerAddress)))
+# print("balance of owner account " + ownerAddress + " is " + str(balanceOf(ownerAddress)))
 
-ethTransfer()
+# ethTransfer()
 
 
