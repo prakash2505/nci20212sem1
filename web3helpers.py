@@ -33,7 +33,7 @@ def symbol():
        symbol = contract_instance.functions.symbol().call()
    return symbol
    
-def tokenTransfer():
+def tokenTransfer(address):
     web3 = Web3(Web3.HTTPProvider(infuraUrl))
     res = web3.isConnected()
     if res:
@@ -43,7 +43,7 @@ def tokenTransfer():
             print('CONNECTED TO WEB3!!!!')
             contract_instance = web3.eth.contract(address=contractAddress,abi=abi)
             # decimals = 10 ** 18 hard coding!!  NOOOOO
-            targetAccount = web3.toChecksumAddress("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C")
+            targetAccount = web3.toChecksumAddress(address)
             dec = 10 ** decimals()
             bal = balanceOf(targetAccount)
             targetBalance = bal / dec
@@ -75,15 +75,12 @@ def tokenTransfer():
             print('tx mined')
 
 
-def ethTransfer():
+def ethTransfer(address, amountInEther):
     web3 = Web3(Web3.HTTPProvider(infuraUrl))
 
     if web3.isConnected():
         print('CONNECTED TO WEB3!!!!')
-        amountInEther = "0.1"
-        # targetAddress = Web3.toChecksumAddress("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C")
-        # targetAccount= Web3.toChecksumAddress("0xC1a7977959992982CbaAc3Cb5df4d97aaB3aCc53")
-        targetAccount = Web3.toChecksumAddress("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C")
+        targetAccount = Web3.toChecksumAddress(address)
 
         nonce = web3.eth.getTransactionCount(ownerAddress)
         print("nonce (tx count) is " + str(nonce))
@@ -111,15 +108,4 @@ def ethTransfer():
         web3.eth.waitForTransactionReceipt(tx_hash)
         print('tx mined')
 
-
-# #  run some tests
-
-# print("symbol is: " + symbol())
-
-# print("decimal places are: " + str(decimals()))
-
-# print("balance of owner account " + ownerAddress + " is " + str(balanceOf(ownerAddress)))
-
-# ethTransfer()
-
-
+ethTransfer("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "0.05")
