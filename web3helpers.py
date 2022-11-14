@@ -108,4 +108,4 @@ def ethTransfer(address, amountInEther):
         web3.eth.waitForTransactionReceipt(tx_hash)
         print('tx mined')
 
-ethTransfer("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "0.05")
+# ethTransfer("0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "0.05")
