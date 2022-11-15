@@ -1,8 +1,11 @@
 ## Build an Image ##
 
-```docker build --tag nci .```
+```docker build --tag nci01 .```
 
 
 ## Run an image ##
 
-```docker run --name nci2 -p 8090:8080 ncipy02```
+```docker run --name nci01 -p 8090:8080 ncipy02```
+
+## Run the curl command ##
+```curl --header "Content-Type: application/json" --request POST --data '{"address":"0xac4FafdA6A3A6B48b4cDC2a896acf8D104C81d6C", "amount":"0.05"}' http://localhost:8090/eth```
