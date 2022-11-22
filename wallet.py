@@ -24,5 +24,8 @@ path = "m/44'/60'/0'/0/0"
 
 myWallet.from_path(path=path)
 
+print("wallet address = " + myWallet.address())
+print("private key:  " + myWallet.private_key())
+
 
 
