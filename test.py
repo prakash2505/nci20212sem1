@@ -39,7 +39,7 @@ if web3.isConnected():
     # query your contract
     symbol = contractInstance.functions.symbol().call()
     # print your success
-    print ('Pratyushs contract symbol is ' + symbol)
+    print ('Prakash contract symbol is ' + symbol)
 
     decimals = contractInstance.functions.decimals().call()
     # print your success
